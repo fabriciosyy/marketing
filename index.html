@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050914" />
+  <meta name="description" content="FB Marketing Digital — estratégia, identidade e comunicação para marcas que querem crescer com mais presença." />
+  <title>FB Marketing Digital</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <style>
+    :root{
+      --blue:#0866ff;
+      --blue-dark:#0047cc;
+      --ink:#050914;
+      --text:#101828;
+      --muted:#667085;
+      --surface:#f5f7fa;
+      --white:#ffffff;
+      --line:#e6eaf0;
+      --radius:24px;
+      --shadow:0 24px 70px rgba(5,9,20,.10);
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--surface);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .section{padding:88px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+    .eyebrow::before{content:"";width:28px;height:2px;background:var(--blue);border-radius:99px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(3rem,7vw,6.8rem);line-height:.94;letter-spacing:-.065em;margin-bottom:24px;max-width:900px}
+    h2{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.02;letter-spacing:-.055em;margin-bottom:20px}
+    h3{font-size:1.3rem;letter-spacing:-.025em;margin-bottom:10px}
+    .lead{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:670px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:14px;font-weight:800;transition:.25s ease;border:1px solid transparent}
+    .btn-primary{background:var(--blue);color:white;box-shadow:0 14px 30px rgba(8,102,255,.25)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--blue-dark)}
+    .btn-secondary{background:rgba(255,255,255,.72);backdrop-filter:blur(10px);border-color:rgba(16,24,40,.12)}
+    .btn-secondary:hover{border-color:var(--blue);color:var(--blue)}
+    .icon{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(245,247,250,.84);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,24,40,.06)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-size:1.65rem;font-weight:950;letter-spacing:-.07em;color:var(--ink)}
+    .brand span{color:var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-weight:700;font-size:.95rem}
+    .nav-links a{color:#344054;transition:.2s}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta{padding:12px 18px;border-radius:12px;background:var(--ink);color:white!important}
+    .menu-btn{display:none;width:46px;height:46px;border:0;background:var(--white);border-radius:12px;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(5,9,20,.08)}
+    .mobile-menu{display:none;padding:0 0 18px}
+    .mobile-menu.open{display:grid;gap:10px}
+    .mobile-menu a{padding:14px 16px;background:white;border:1px solid var(--line);border-radius:12px;font-weight:750}
+    .mobile-menu .mobile-whatsapp{background:var(--blue);color:white;text-align:center}
+
+    /* Hero */
+    .hero{position:relative;padding:80px 0 64px;isolation:isolate;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:720px;height:720px;background:radial-gradient(circle,rgba(8,102,255,.22),rgba(8,102,255,0) 67%);z-index:-2}
+    .hero::after{content:"";position:absolute;inset:0;z-index:-3;background-image:linear-gradient(rgba(8,102,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(8,102,255,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 92%)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:44px;align-items:end}
+    .hero-copy{padding:34px 0}
+    .hero-copy h1 strong{color:var(--blue)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+    .hero-visual{position:relative;min-height:520px;border-radius:34px;overflow:hidden;background:linear-gradient(145deg,#071127,#050914 55%,#0b2550);box-shadow:var(--shadow)}
+    .hero-visual::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgba(8,102,255,.45),transparent 30%),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:auto,32px 32px,32px 32px}
+    .orb{position:absolute;border-radius:50%;filter:blur(2px)}
+    .orb.one{width:210px;height:210px;background:radial-gradient(circle at 30% 30%,#5f9cff,#0866ff 55%,#0037a8);right:13%;top:12%;box-shadow:0 0 90px rgba(8,102,255,.55)}
+    .orb.two{width:92px;height:92px;border:1px solid rgba(255,255,255,.42);left:14%;bottom:16%;box-shadow:inset 0 0 30px rgba(255,255,255,.08)}
+    .tech-card{position:absolute;left:9%;right:9%;bottom:10%;padding:22px;border:1px solid rgba(255,255,255,.14);border-radius:20px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);color:white}
+    .tech-card small{color:#9bbcff;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    .tech-card strong{display:block;font-size:1.5rem;margin-top:8px;letter-spacing:-.03em}
+    .signal{display:flex;gap:8px;align-items:flex-end;margin-top:22px;height:52px}
+    .signal span{display:block;width:12%;background:linear-gradient(#4c8dff,#0866ff);border-radius:8px 8px 2px 2px}
+    .signal span:nth-child(1){height:28%}.signal span:nth-child(2){height:44%}.signal span:nth-child(3){height:37%}.signal span:nth-child(4){height:64%}.signal span:nth-child(5){height:56%}.signal span:nth-child(6){height:82%}.signal span:nth-child(7){height:100%}
+
+    /* Pillars */
+    .pillars{padding:34px 0 10px}
+    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .pillar{padding:26px;background:rgba(255,255,255,.75);border:1px solid rgba(16,24,40,.08);border-radius:20px}
+    .icon-box{width:52px;height:52px;border-radius:15px;background:#eaf1ff;color:var(--blue);display:grid;place-items:center;margin-bottom:20px}
+    .pillar p,.service-card p,.step p{color:var(--muted);margin-bottom:0}
+
+    /* Institutional */
+    .institutional{background:var(--ink);color:white;border-radius:32px;padding:58px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;overflow:hidden}
+    .institutional::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-150px;top:-170px;background:radial-gradient(circle,rgba(8,102,255,.55),transparent 70%)}
+    .institutional p{color:#b8c2d4;font-size:1.16rem;padding-left:24px;border-left:3px solid var(--blue);margin-bottom:0;position:relative;z-index:2}
+
+    /* Services */
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:38px}
+    .section-head p{max-width:520px;color:var(--muted);margin-bottom:0}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card{background:white;border:1px solid var(--line);border-radius:22px;padding:30px;transition:.25s ease}
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#cdd9ef}
+
+    /* Process */
+    .process{background:#edf1f7}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}
+    .step{background:white;border-radius:20px;padding:26px;border:1px solid #e2e7ef;position:relative}
+    .step:not(:last-child)::after{content:"";position:absolute;top:52px;right:-16px;width:16px;height:1px;background:#b9c5d7}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .project-card{display:block}
+    .project-media{aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#dfe7f5,#f7f9fc);position:relative;border:1px solid var(--line)}
+    .project-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}.project-card:hover .project-media img{transform:scale(1.035)}
+    .project-media::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(135deg,rgba(8,102,255,.18),transparent 50%),linear-gradient(rgba(5,9,20,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(5,9,20,.05) 1px,transparent 1px);background-size:auto,24px 24px,24px 24px}
+    .project-label{position:absolute;z-index:2;inset:auto 18px 18px 18px;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);padding:15px;border-radius:15px}
+    .project-label small{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+    .project-label strong{display:block;margin-top:5px;font-size:1.08rem}.project-label p{margin:6px 0 0;color:var(--muted);font-size:.84rem;line-height:1.45}
+    .project-card:hover .project-media{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .project-media{transition:.25s ease}
+
+    /* CTA */
+    .cta{background:linear-gradient(145deg,#071127,#050914);color:white;border-radius:32px;padding:64px;text-align:center;position:relative;overflow:hidden}
+    .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,rgba(8,102,255,.34),transparent 55%)}
+    .cta>*{position:relative}
+    .cta p{max-width:650px;margin:0 auto 30px;color:#b9c4d7;font-size:1.1rem}
+
+    /* Footer */
+    footer{padding:42px 0 28px}
+    .footer-grid{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .footer-logo{width:150px;aspect-ratio:1;background:transparent;border-radius:22px;padding:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .footer-meta{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+    .footer-logo img{width:100%;height:100%;object-fit:contain;display:block}
+    .copyright{padding-top:22px;color:#98a2b3;font-size:.86rem}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:18px;background:var(--blue);color:white;display:grid;place-items:center;box-shadow:0 18px 36px rgba(8,102,255,.34);z-index:60}
+
+    @media(max-width:900px){
+      .nav-links{display:none}.menu-btn{display:flex}
+      .hero{padding-top:42px}.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:420px}
+      .pillar-grid,.service-grid,.projects-grid{grid-template-columns:1fr}
+      .institutional{grid-template-columns:1fr;padding:42px 30px;gap:24px}
+      .steps{grid-template-columns:1fr 1fr}.step:not(:last-child)::after{display:none}
+      .section-head{display:block}.section-head p{margin-top:14px}
+    }
+    @media(max-width:640px){
+      .container{width:min(calc(100% - 32px),var(--max))}
+      .section{padding:64px 0}
+      .nav{height:68px}
+      h1{font-size:clamp(2.7rem,14vw,4.2rem);letter-spacing:-.07em}
+      h2{font-size:clamp(2.15rem,11vw,3rem)}
+      .hero{padding:34px 0 44px}
+      .hero-copy{padding:10px 0}
+      .hero-actions{display:grid;grid-template-columns:1fr;width:100%}.btn{width:100%}
+      .hero-visual{min-height:350px;border-radius:26px}
+      .orb.one{width:160px;height:160px;right:6%;top:10%}
+      .tech-card{left:6%;right:6%;bottom:7%;padding:18px}
+      .pillar{padding:22px}
+      .institutional{border-radius:24px;padding:34px 24px}.institutional p{padding-left:18px;font-size:1rem}
+      .service-card{padding:24px}.steps{grid-template-columns:1fr}
+      .project-media{border-radius:18px}
+      .cta{padding:44px 22px;border-radius:24px}
+      .footer-grid{display:grid}.footer-logo{width:118px}.footer-meta{display:grid;gap:8px}
+    }
+
+    /* Versão escura — cards centralizados e ícones maiores */
+    :root{
+      --surface:#030711;
+      --text:#f7f9ff;
+      --muted:#a8b3c7;
+      --white:#0b1220;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.34);
+    }
+    body{background:var(--surface);color:var(--text)}
+    header{background:rgba(3,7,17,.86);border-bottom:1px solid rgba(255,255,255,.08)}
+    .brand{color:#fff}
+    .nav-links a{color:#c4cee0}.nav-links a:hover{color:#fff}
+    .nav-cta{background:var(--blue);color:#fff!important}
+    .menu-btn{background:#0b1220;color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.10)}
+    .mobile-menu a{background:#0b1220;border-color:rgba(255,255,255,.10);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.04);color:#fff;border-color:rgba(255,255,255,.18)}
+    .btn-secondary:hover{background:rgba(8,102,255,.12)}
+    .hero::after{background-image:linear-gradient(rgba(8,102,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(8,102,255,.07) 1px,transparent 1px)}
+    .hero-visual{border:1px solid rgba(255,255,255,.10)}
+    .pillar,.service-card,.step{background:linear-gradient(145deg,#0a111f,#070c16);border-color:rgba(255,255,255,.10);color:#fff;box-shadow:0 16px 42px rgba(0,0,0,.20)}
+    .pillar p,.service-card p,.step p,.section-head p{color:var(--muted)}
+    .pillar,.service-card,.step{text-align:center;display:flex;flex-direction:column;align-items:center}
+    .icon-box{width:76px;height:76px;border-radius:22px;background:linear-gradient(145deg,rgba(8,102,255,.24),rgba(8,102,255,.08));border:1px solid rgba(83,145,255,.34);color:#65a0ff;margin:0 auto 22px;box-shadow:0 12px 34px rgba(8,102,255,.15)}
+    .icon-box .icon{width:36px;height:36px;stroke-width:1.9}
+    .pillar{padding:34px 26px;min-height:230px;justify-content:center}
+    .service-card{padding:36px 30px;min-height:330px;justify-content:center}
+    .step{padding:32px 24px;min-height:280px;justify-content:center}
+    .institutional{background:linear-gradient(145deg,#071127,#040812);border:1px solid rgba(255,255,255,.10)}
+    .process{background:#050a14;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+    .project-media{background:linear-gradient(145deg,#0a1426,#07101e);border-color:rgba(255,255,255,.10)}
+    .project-media::before{background:linear-gradient(135deg,rgba(8,102,255,.28),transparent 50%),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:auto,24px 24px,24px 24px}
+    .project-label{background:rgba(5,9,20,.82);color:#fff;border:1px solid rgba(255,255,255,.10)}
+    .footer-grid{border-bottom-color:rgba(255,255,255,.10)}
+    .footer-meta,.copyright{color:#8f9bb0}
+    @media(max-width:640px){
+      .pillar,.service-card,.step{min-height:auto;padding:32px 24px}
+      .icon-box{width:72px;height:72px;border-radius:21px;margin-bottom:20px}
+      .icon-box .icon{width:34px;height:34px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="FB Marketing Digital">F<span>B</span></a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Processo</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="#contato" class="nav-cta">Vamos conversar</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Processo</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a class="mobile-whatsapp" href="https://wa.me/5516996163403" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Agência de estratégia e design</span>
+          <h1>Impulsionamos marcas com <strong>estratégia</strong> e design.</h1>
+          <p class="lead">Unimos estratégia, identidade e execução para transformar negócios em marcas mais claras, profissionais e preparadas para crescer.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5516996163403" target="_blank" rel="noopener">Iniciar projeto</a>
+            <a class="btn btn-secondary" href="portfolio.html">Ver trabalhos</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orb one"></div>
+          <div class="orb two"></div>
+          <div class="tech-card">
+            <small>FB Marketing Digital</small>
+            <strong>Estratégia que vira presença.</strong>
+            <div class="signal"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="container pillar-grid">
+        <article class="pillar">
+          <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l3 6 6 .8-4.5 4.4 1.1 6.3L12 17.7 6.4 20.5l1.1-6.3L3 9.8 9 9z"/></svg></div>
+          <h3>Estratégia</h3><p>Direção antes da estética.</p>
+        </article>
+        <article class="pillar">
+          <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v3a6 6 0 0 0 12 0V9a6 6 0 0 0-6-6Z"/><path d="M9 9v3a3 3 0 0 0 6 0V9"/><path d="M12 6v12"/></svg></div>
+          <h3>Identidade</h3><p>Marcas coerentes em cada ponto.</p>
+        </article>
+        <article class="pillar">
+          <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Execução</h3><p>Do conceito ao material pronto.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container institutional">
+        <h2>Uma agência enxuta para marcas que querem avançar.</h2>
+        <p>Atuação próxima, direção estratégica e execução criativa no mesmo processo.</p>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Soluções</span><h2>Construímos presença, não peças soltas.</h2></div>
+          <p>Cada frente conecta estratégia, identidade e execução para aumentar o valor percebido da sua marca.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Branding</h3><p>Identidade visual, posicionamento e aplicações consistentes para todos os pontos de contato.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M4 13v-2l11-5v12L4 13Z"/><path d="M8 14v5H5v-6"/><path d="M18 8c1 1 1 7 0 8"/></svg></div>
+            <h3>Campanhas</h3><p>Conceito, direção criativa e materiais que comunicam com clareza e intenção.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m9 10 2 2 4-4"/></svg></div>
+            <h3>Digital</h3><p>Landing pages, campanhas online e materiais pensados para transformar atenção em contato.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo" class="section process">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Processo</span><h2>Do diagnóstico à entrega, sem enrolação.</h2></div>
+          <p>Um fluxo claro para manter estratégia, criação e aplicação caminhando juntas.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></div><h3>Diagnóstico</h3><p>Entendemos o negócio, o momento e o objetivo.</p></article>
+          <article class="step"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 5-5 2 2-5z"/></svg></div><h3>Direção</h3><p>Definimos a rota estratégica e visual.</p></article>
+          <article class="step"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="m4 20 4-1 10-10-3-3L5 16z"/><path d="m14 7 3 3"/></svg></div><h3>Criação</h3><p>Desenvolvemos a solução com consistência.</p></article>
+          <article class="step"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h6l2 2h8v10H4z"/><path d="m9 14 2 2 4-4"/></svg></div><h3>Entrega</h3><p>Organizamos tudo pronto para aplicação.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Portfólio</span><h2>Projetos que ganharam mais presença.</h2></div>
+          <a href="portfolio.html" style="font-weight:800;color:var(--blue)">Ver portfólio completo →</a>
+        </div>
+        <div class="projects-grid">
+          <a class="project-card" href="portfolio.html"><div class="project-media"><img src="assets/lumi-branding.webp" alt="Projeto de branding LUMI Moda Feminina"><div class="project-label"><small>Branding</small><strong>LUMI Moda Feminina</strong><p>Identidade visual elegante e consistente em cada aplicação.</p></div></div></a>
+          <a class="project-card" href="portfolio.html"><div class="project-media"><img src="assets/high-play-campanha.webp" alt="Campanha visual High Play"><div class="project-label"><small>Campanha</small><strong>High Play</strong><p>Comunicação comercial clara, atrativa e orientada à presença.</p></div></div></a>
+          <a class="project-card" href="portfolio.html"><div class="project-media"><img src="assets/isis-concept-digital.webp" alt="Presença digital Ísis Concept"><div class="project-label"><small>Digital</small><strong>Ísis Concept</strong><p>Presença digital organizada para fortalecer identidade e experiência.</p></div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container cta">
+        <span class="eyebrow" style="color:#8fb7ff">Próximo passo</span>
+        <h2>Sua marca pode ocupar um espaço maior.</h2>
+        <p>Fale com a FB e vamos entender qual direção faz sentido para o seu negócio.</p>
+        <a class="btn btn-primary" href="https://wa.me/5516996163403" target="_blank" rel="noopener">Falar com a FB no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo"><img src="assets/simbolo-fb.png" alt="Símbolo da FB Marketing Digital" /></div>
+        <div class="footer-meta"><span>Ribeirão Preto – SP</span><span>(16) 99616-3403</span><a href="portfolio.html">Portfólio</a></div>
+      </div>
+      <div class="copyright">© 2026 FB Marketing Digital. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5516996163403" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.5c.3 2.5 2.2 4.5 4.8 4.9l1.2-1.2 2 .8-.4 2c-3.8 1.4-9.5-4.3-8-8.1l2-.4.8 2z"/></svg>
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>

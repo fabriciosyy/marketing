@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050914" />
+  <title>Portfólio | FB Marketing Digital</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <style>
+    :root{--blue:#0866ff;--ink:#050914;--text:#101828;--muted:#667085;--surface:#f5f7fa;--white:#fff;--line:#e6eaf0;--max:1180px}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--surface);color:var(--text);line-height:1.5}a{text-decoration:none;color:inherit}.container{width:min(calc(100% - 40px),var(--max));margin:auto}header{position:sticky;top:0;background:rgba(245,247,250,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,24,40,.06);z-index:10}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:1.65rem;font-weight:950;letter-spacing:-.07em}.brand span{color:var(--blue)}.back{font-weight:800;color:var(--blue)}.hero{padding:78px 0 50px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}h1{font-size:clamp(3rem,8vw,6.3rem);line-height:.96;letter-spacing:-.065em;margin:12px 0 22px;max-width:900px}.lead{font-size:1.14rem;color:var(--muted);max-width:700px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 44px}.filter{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:white;font-weight:750}.filter.active{background:var(--ink);color:white}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-bottom:90px}.card{background:white;border:1px solid var(--line);border-radius:24px;overflow:hidden}.media{aspect-ratio:4/3;background:linear-gradient(145deg,#dfe7f5,#fafbfd);position:relative}.media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}.card:hover .media img{transform:scale(1.025)}
+    .media::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(135deg,rgba(8,102,255,.2),transparent 50%),linear-gradient(rgba(5,9,20,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(5,9,20,.05) 1px,transparent 1px);background-size:auto,26px 26px,26px 26px}.content{padding:24px}.category{color:var(--blue);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;font-weight:850}.content h2{font-size:1.55rem;margin:8px 0}.content p{color:var(--muted);margin:0}.hint{margin-top:18px;font-size:.85rem;color:#98a2b3}.cta{background:var(--ink);color:white;border-radius:28px;padding:46px;text-align:center;margin-bottom:70px}.cta h2{font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.05;letter-spacing:-.05em;margin:0 0 18px}.cta p{color:#b7c0d2}.btn{display:inline-flex;background:var(--blue);color:white;padding:15px 22px;border-radius:14px;font-weight:850;margin-top:10px}footer{padding:28px 0;color:#98a2b3;font-size:.88rem;border-top:1px solid var(--line)}
+    @media(max-width:720px){.container{width:min(calc(100% - 32px),var(--max))}.hero{padding-top:48px}.grid{grid-template-columns:1fr}.cta{padding:38px 22px}.nav{height:68px}}
+
+    /* Versão escura do portfólio */
+    :root{--surface:#030711;--text:#f7f9ff;--muted:#a8b3c7;--white:#0b1220;--line:rgba(255,255,255,.10)}
+    body{background:var(--surface);color:var(--text)}
+    header{background:rgba(3,7,17,.88);border-bottom-color:rgba(255,255,255,.08)}
+    .brand{color:#fff}.lead,.content p{color:var(--muted)}
+    .filter{background:#0b1220;border-color:rgba(255,255,255,.10);color:#d3dbea}.filter.active{background:var(--blue);color:#fff}
+    .card{background:linear-gradient(145deg,#0a111f,#070c16);border-color:rgba(255,255,255,.10);box-shadow:0 16px 42px rgba(0,0,0,.18)}
+    .media{background:linear-gradient(145deg,#0a1426,#07101e)}
+    .media::before{background:linear-gradient(135deg,rgba(8,102,255,.28),transparent 50%),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:auto,26px 26px,26px 26px}
+    .hint{color:#77849a}.cta{background:linear-gradient(145deg,#071127,#040812);border:1px solid rgba(255,255,255,.10)}
+    footer{border-top-color:rgba(255,255,255,.10)}
+  </style>
+</head>
+<body>
+  <header><div class="container nav"><a class="brand" href="index.html">F<span>B</span></a><a class="back" href="index.html">← Voltar para a home</a></div></header>
+  <main>
+    <section class="hero"><div class="container"><span class="eyebrow">Portfólio</span><h1>Projetos criados para aumentar presença e valor percebido.</h1><p class="lead">Branding, campanhas, presença digital e sites desenvolvidos para marcas que querem avançar.</p><div class="filters"><span class="filter active">Todos</span><span class="filter">Branding</span><span class="filter">Campanhas</span><span class="filter">Digital</span><span class="filter">Sites</span></div></div></section>
+    <section><div class="container grid">
+      <!-- DUPLIQUE ESTE BLOCO PARA ADICIONAR NOVOS PROJETOS -->
+      <article class="card"><div class="media"><img src="assets/lumi-branding.webp" alt="Projeto de branding LUMI Moda Feminina"></div><div class="content"><span class="category">Branding</span><h2>LUMI Moda Feminina</h2><p>Identidade visual desenvolvida para transmitir elegância, leveza e presença de marca em cada aplicação.</p></div></article>
+      <article class="card"><div class="media"><img src="assets/high-play-campanha.webp" alt="Campanha visual High Play"></div><div class="content"><span class="category">Campanha</span><h2>High Play</h2><p>Campanha visual desenvolvida para reforçar a proposta da marca e apresentar seus diferenciais de forma clara, atrativa e comercial.</p></div></article>
+      <article class="card"><div class="media"><img src="assets/isis-concept-digital.webp" alt="Presença digital Ísis Concept"></div><div class="content"><span class="category">Digital</span><h2>Ísis Concept</h2><p>Presença digital desenvolvida para organizar a comunicação da marca, fortalecer sua identidade e valorizar a experiência no Instagram.</p></div></article>
+      <article class="card"><div class="media"><img src="assets/hud-site.webp" alt="Site responsivo desenvolvido para HUD Negócios Imobiliários"></div><div class="content"><span class="category">Criação de site</span><h2>HUD Negócios Imobiliários</h2><p>Desenvolvimento de um site moderno e responsivo, com navegação clara e estrutura estratégica para apresentar serviços e gerar oportunidades.</p></div></article>
+    </div></section>
+    <section><div class="container cta"><h2>Vamos construir a próxima fase da sua marca.</h2><p>Fale diretamente com a FB pelo WhatsApp.</p><a class="btn" href="https://wa.me/5516996163403" target="_blank" rel="noopener">Iniciar conversa</a></div></section>
+  </main>
+  <footer><div class="container">© 2026 FB Marketing Digital. Todos os direitos reservados.</div></footer>
+</body>
+</html>
